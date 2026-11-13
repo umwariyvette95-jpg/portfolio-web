@@ -1,33 +1,29 @@
 (() => {
-  const themeButton = document.querySelector("#th");
-  if (!(themeButton instanceof HTMLButtonElement)) {
-    return;
-  }
+  const body = document.body;
+  const themeBtn = document.getElementById('th');
 
-  const setTheme = (theme) => {
-    const isDark = theme === "dark";
-    document.body.dataset.theme = isDark ? "dark" : "light";
-    themeButton.textContent = isDark ? "Light mode" : "Dark mode";
-    themeButton.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
-    themeButton.setAttribute("aria-pressed", String(isDark));
+  if (!themeBtn) return;
+
+  const applyTheme = () => {
+    const isDark = body.classList.contains('dark');
+    themeBtn.setAttribute('aria-pressed', String(isDark));
+    themeBtn.textContent = isDark ? 'light' : 'dark';
   };
 
-  try {
-    const savedTheme = localStorage.getItem("portfolio-theme");
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setTheme(savedTheme);
-    }
-  } catch {
-    setTheme("light");
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark');
+  } else if (savedTheme === 'light') {
+    body.classList.remove('dark');
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    body.classList.add('dark');
   }
 
-  themeButton.addEventListener("click", () => {
-    const theme = document.body.dataset.theme === "dark" ? "light" : "dark";
-    setTheme(theme);
-    try {
-      localStorage.setItem("portfolio-theme", theme);
-    } catch {
-      // The selected theme still applies for this page view.
-    }
+  applyTheme();
+
+  themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    applyTheme();
   });
 })();
