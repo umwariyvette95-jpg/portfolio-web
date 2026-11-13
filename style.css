@@ -224,21 +224,6 @@ p {
   box-shadow: var(--shadow);
 }
 
-.code {
-  font-family: "JetBrains Mono", monospace;
-  background: var(--code-bg);
-  color: var(--code-text);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 1.2rem 1.25rem;
-  width: min(520px, 100%);
-  box-shadow: var(--shadow);
-}
-
-.code span {
-  color: #7ce2ff;
-}
-
 .ph {
   display: flex;
   justify-content: center;
