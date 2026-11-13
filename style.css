@@ -143,11 +143,6 @@ h1 {
   max-width: 620px;
 }
 
-.intro-line {
-  display: block;
-  margin-bottom: 0.1em;
-}
-
 h1 i {
   color: var(--accent);
   font-style: normal;
