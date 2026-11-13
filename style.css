@@ -36,7 +36,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Lato", sans-serif;
   background:
     radial-gradient(circle at top left, rgba(185,80,95,0.10), transparent 30%),
     linear-gradient(180deg, var(--bg), var(--bg-soft));
@@ -86,9 +86,9 @@ nav .w {
 }
 
 .logo {
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.7rem;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
   font-weight: 700;
   color: var(--text);
 }
@@ -137,10 +137,15 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   max-width: 620px;
+}
+
+.intro-line {
+  display: block;
+  margin-bottom: 0.1em;
 }
 
 h1 i {
@@ -149,9 +154,9 @@ h1 i {
 }
 
 h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Lato", sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 
 p {
@@ -217,21 +222,6 @@ p {
   border-color: transparent;
   color: #fff;
   box-shadow: var(--shadow);
-}
-
-.code {
-  font-family: "JetBrains Mono", monospace;
-  background: var(--code-bg);
-  color: var(--code-text);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 1.2rem 1.25rem;
-  width: min(520px, 100%);
-  box-shadow: var(--shadow);
-}
-
-.code span {
-  color: #7ce2ff;
 }
 
 .ph {
